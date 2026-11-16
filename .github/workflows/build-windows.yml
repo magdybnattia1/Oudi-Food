@@ -17,6 +17,8 @@ jobs:
           node-version: 20
       - name: Install dependencies
         run: npm install --no-audit --no-fund
+      - name: Check application script syntax
+        run: node --check src/renderer.js
       - name: Build Windows 64-bit installer
         run: npm run build:win -- --publish never
       - name: Upload installer
