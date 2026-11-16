@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OUDI FOOD | الكاشير</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark">O</span><div><b>OUDI FOOD</b><small>نظام إدارة المطعم</small></div></div>
+    <div class="side-label">القائمة الرئيسية</div>
+    <button class="nav active">▦ <span>الكاشير والطلبات</span></button>
+    <button class="nav" id="ordersNav">◷ <span>متابعة الطلبات</span></button>
+    <button class="nav" disabled>▤ <span>المنتجات والمنيو</span></button>
+    <button class="nav" disabled>♙ <span>العملاء والمندوبون</span></button>
+    <button class="nav" disabled>▥ <span>المخزون والخامات</span></button>
+    <button class="nav" disabled>▣ <span>الخزنة والمصروفات</span></button>
+    <button class="nav" disabled>▧ <span>التقارير</span></button>
+    <div class="sidebar-foot"><span class="dot"></span> يعمل بدون إنترنت</div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><h1>الكاشير</h1><p>استقبل طلبات الدليفري بسرعة وسهولة</p></div><div class="top-date" id="today"></div></header>
+    <section class="workspace">
+      <div class="menu-panel">
+        <div class="section-head"><div><h2>قائمة الطعام</h2><p>اختار الأصناف لإضافتها للطلب</p></div><span class="count" id="productCount">0 صنف</span></div>
+        <div class="filters" id="filters"><button class="filter active" data-category="الكل">الكل</button></div>
+        <div class="products" id="products"><div class="empty">جاري تحميل المنتجات...</div></div>
+      </div>
+      <section class="order-panel">
+        <div class="section-head"><div><h2>طلب دليفري جديد</h2><p>بيانات العميل والطلب</p></div><span class="order-tag">طلب جديد</span></div>
+        <div class="fields">
+          <label>اسم العميل<input id="customer" placeholder="اسم العميل"></label>
+          <label>رقم الهاتف<input id="phone" inputmode="tel" placeholder="01xxxxxxxxx"></label>
+          <label class="full">عنوان التوصيل<textarea id="address" rows="2" placeholder="المنطقة، الشارع، رقم العقار"></textarea></label>
+        </div>
+        <div class="cart-title"><b>الأصناف المطلوبة</b><span id="cartCount">0 أصناف</span></div>
+        <div class="cart-items" id="cart"><div class="cart-empty">لم تتم إضافة أصناف بعد</div></div>
+        <div class="totals">
+          <div><span>الإجمالي الفرعي</span><b id="subtotal">0 ج.م</b></div>
+          <div class="fee-row"><label for="delivery">رسوم التوصيل</label><input id="delivery" type="number" min="0" value="20"></div>
+          <div class="fee-row"><label for="discount">الخصم</label><input id="discount" type="number" min="0" value="0"></div>
+          <div class="grand"><span>الإجمالي النهائي</span><strong id="total">0 ج.م</strong></div>
+        </div>
+        <div class="payment"><span>طريقة الدفع</span><label><input type="radio" name="payment" value="نقدي" checked> نقدي</label><label><input type="radio" name="payment" value="بطاقة"> بطاقة</label></div>
+        <button class="submit" id="submitOrder">تأكيد الطلب وحفظه</button>
+        <div class="hint" id="message">يتم حفظ الطلبات على هذا الجهاز فقط.</div>
+      </section>
+    </section>
+    <section class="recent">
+      <div class="section-head"><div><h2>أحدث الطلبات</h2><p>آخر الطلبات المسجلة على الجهاز</p></div><button class="refresh" id="refresh">تحديث</button></div>
+      <div class="table-wrap"><table><thead><tr><th>رقم</th><th>العميل</th><th>الهاتف</th><th>الإجمالي</th><th>الحالة</th><th>تغيير الحالة</th></tr></thead><tbody id="ordersBody"><tr><td colspan="6">لا توجد طلبات حتى الآن</td></tr></tbody></table></div>
+    </section>
+  </main>
+  <script src="renderer.js"></script>
+</body>
+</html>
