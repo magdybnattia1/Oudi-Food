@@ -1,6 +1,6 @@
 {
   "name": "oudi-food",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "OUDI FOOD - Offline Arabic delivery POS",
   "main": "src/main.js",
   "scripts": {"start":"electron .","build:win":"electron-builder --win nsis --x64"},
